@@ -12,6 +12,10 @@ namespace ConsoleApp
         {
             Point pointOne=new Point();
             Console.WriteLine(pointOne.y);
+            Console.WriteLine();
+            pointOne.PrintPoint();
+            Console.WriteLine();
+            pointOne.PrintX();
 
             Console.ReadLine();
         }
