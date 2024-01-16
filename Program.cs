@@ -10,44 +10,42 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Point pointOne = new Point();
-            Console.WriteLine(pointOne._y);
-            Console.WriteLine();
-            pointOne.PrintPoint();
-            Console.WriteLine();
-            pointOne.PrintX();
+            Console.Write("Введите номер задачи: ");
+            string s = Console.ReadLine();
+            bool result =int.TryParse(s, out int number);
+            if (result)
+            {
+                if (number == 1)
+                {
+                    Point pointOne = new Point();
+                    Console.WriteLine(pointOne._y);
+                    Console.WriteLine();
+                    pointOne.PrintPoint();
+                    Console.WriteLine();
+                    pointOne.PrintX();
+                }
+                if (number == 2)
+                {
+                    GetSet getSetX = new GetSet();
+                    getSetX.SetX(1);
+                    int x = getSetX.GetX();   
+                    
+                    GetSet getSetY = new GetSet();
+                    getSetY.Y = 10;
+                    int y = getSetY.Y;
 
+                    GetSet getSetZ=new GetSet();
+                    getSetZ.SetX(2);
+                    int z = getSetZ.GetX();
+
+                    Console.WriteLine($"Координаты точки равны: ({x},{y},{z})");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Номер задачи введен не был!");
+            }
             Console.ReadLine();
         }
-    }
-    class Point
-    {
-        private int _x;
-        public int _y;
-
-
-        public Point(int x, int y)
-        {
-            _x = x;
-            _y = y;
-        }
-
-        public void PrintX()
-        {
-            Console.WriteLine("X: "+ _x);
-        }
-        private void PrintY()
-        {
-            Console.WriteLine($"Y: {_y}");
-        }
-        public void PrintPoint()
-        {
-            Console.WriteLine("X: "+ _x);
-            PrintY();
-        }
-        public Point()
-        {
-            _x = _y=1;
-        }
-    }
+    }    
 }
