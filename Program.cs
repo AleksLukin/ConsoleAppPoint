@@ -10,7 +10,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Point pointOne = new Point(5, 4);
+            Point pointOne = new Point();
             Console.WriteLine(pointOne._y);
             Console.WriteLine();
             pointOne.PrintPoint();
@@ -38,12 +38,16 @@ namespace ConsoleApp
         }
         private void PrintY()
         {
-            Console.WriteLine("Y: "+ _y);
+            Console.WriteLine($"Y: {_y}");
         }
         public void PrintPoint()
         {
             Console.WriteLine("X: "+ _x);
             PrintY();
+        }
+        public Point()
+        {
+            _x = _y=1;
         }
     }
 }
